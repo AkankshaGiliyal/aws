@@ -12,19 +12,19 @@ const provider = new ethers.providers.JsonRpcProvider("https://pacific-rpc.manta
 const addressFunctions = [
   {
     address: "0x713C1300f82009162cC908dC9D82304A51F05A3E",
-    processFunction: (totalAssets) => totalAssets/100
+    processFunction: (totalAssets) => totalAssets/1
   },
   {
     address: "0x0DB2BA00bCcf4F5e20b950bF954CAdF768D158Aa",
-    processFunction: (totalAssets) => totalAssets/100
+    processFunction: (totalAssets) => totalAssets/1
   },
   {
     address: "0xDc63179CC57783493DD8a4Ffd7367DF489Ae93BF",
-    processFunction: (totalAssets) => totalAssets/100
+    processFunction: (totalAssets) => totalAssets/1
   },
   {
     address: " 0x5f247B216E46fD86A09dfAB377d9DBe62E9dECDA",
-    processFunction: (totalAssets) => totalAssets/100 
+    processFunction: (totalAssets) => totalAssets/1 
   },
   
   
@@ -34,17 +34,17 @@ const tvlData = {
   manta: {
     USDT: {
       token: "0xf417F5A458eC102B90352F697D6e2Ac3A3d2851f",
-      value: Math.round(1553031996.25)
+      value: 158211382932
     },
     WETH: {
       
       token: "0x0Dc808adcE2099A9F62AA87D9670745AbA741746",
-      value: 101647647361819380
+      value: 10195764736181938000
     },
     USDC: {
       
       token: "0xb73603C5d87fA094B7314C74ACE2e64D165016fb",
-      value: Math.round(1001821811.03)
+      value: 100148496633
     }
   }
 };
@@ -66,7 +66,7 @@ for (const { address, processFunction } of addressFunctions) {
   fetchTotalAssetsWithFunction(address, processFunction);
 }
 
-app.get('api/tvl/manta', (req, res) => {
+app.get('/tvl', (req, res) => {
   res.json(tvlData);
 });
 
