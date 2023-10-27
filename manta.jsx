@@ -66,7 +66,7 @@ for (const { address, processFunction } of addressFunctions) {
   fetchTotalAssetsWithFunction(address, processFunction);
 }
 
-app.get('/tvl', (req, res) => {
+app.get('api/tvl/manta', (req, res) => {
   res.json(tvlData);
 });
 
