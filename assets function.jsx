@@ -8,7 +8,7 @@ const path = require('path');
 const mntABI = require('./ABI.jsx');
 const provider = new ethers.providers.JsonRpcProvider("https://rpc.mantle.xyz");
 
-// Define an array of objects where each object contains an address and a corresponding function
+// array of objects where each object contains an address and a corresponding function
 const addressFunctions = [
   {
     address: "0xfa944c1996efBF9FbFF1a378903F4AD82C172D72",
@@ -66,7 +66,7 @@ async function fetchTotalAssets(address, totalAssetsFunction) {
   }
 }
 
-// Define a function to fetch the denomination asset for an address and apply the corresponding function
+// function to fetch the denomination asset for an address and apply the corresponding function
 async function fetchDenominationAsset(address, denominationAssetFunction) {
   try {
     const contract = new ethers.Contract(address, mntABI, provider);
@@ -77,8 +77,7 @@ async function fetchDenominationAsset(address, denominationAssetFunction) {
     console.error(`Error fetching denomination asset for ${address}:`, error);
   }
 }
-
-// Call the functions for each address-function pair in the array
+// functions for each address-function pair in the array
 for (const { address, totalAssetsFunction, denominationAssetFunction } of addressFunctions) {
   fetchTotalAssets(address, totalAssetsFunction);
   fetchDenominationAsset(address, denominationAssetFunction);
