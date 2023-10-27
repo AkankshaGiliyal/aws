@@ -8,7 +8,7 @@ const path = require('path');
 const mntABI = require('./ABI.jsx');
 const provider = new ethers.providers.JsonRpcProvider("https://pacific-rpc.manta.network/http");
 
-// Define an array of objects where each object contains an address and a corresponding function
+// array of objects where each object contains an address and a corresponding function
 const addressFunctions = [
   {
     address: "0x713C1300f82009162cC908dC9D82304A51F05A3E",
@@ -34,7 +34,7 @@ const addressFunctions = [
       
 ];
 
-// Define a function to fetch totalAssets for an address and apply for the corresponding function
+// function to fetch totalAssets for an address and apply for the corresponding function
 async function fetchTotalAssets(address, totalAssetsFunction) {
   try {
     const contract = new ethers.Contract(address, mntABI, provider);
@@ -46,7 +46,7 @@ async function fetchTotalAssets(address, totalAssetsFunction) {
   }
 }
 
-// Define a function to fetch the denomination asset for an address and apply the corresponding function
+// function to fetch the denomination asset for an address and apply the corresponding function
 async function fetchDenominationAsset(address, denominationAssetFunction) {
   try {
     const contract = new ethers.Contract(address, mntABI, provider);
@@ -58,7 +58,7 @@ async function fetchDenominationAsset(address, denominationAssetFunction) {
   }
 }
 
-// Call the functions for each address-function pair in the array
+// calling the functions for each address-function pair in the array
 for (const { address, totalAssetsFunction, denominationAssetFunction } of addressFunctions) {
   fetchTotalAssets(address, totalAssetsFunction);
   fetchDenominationAsset(address, denominationAssetFunction);
