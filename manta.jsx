@@ -4,6 +4,7 @@ const { ethers } = require('ethers');
 const app = express();
 const port = 3001;
 const path = require('path');
+const publicIP = '18.208.129.38';
 
 const mntABI = require('./ABI.jsx');
 const provider = new ethers.providers.JsonRpcProvider("https://pacific-rpc.manta.network/http");
@@ -69,5 +70,5 @@ app.get('/tvl', (req, res) => {
 });
 
 app.listen(port, '0.0.0.0',() => {
-  console.log(`Server is running at http://18.208.129.38:${port}`);
+  console.log(`Server is running at http://${publicIP}:${port}`);
 });
