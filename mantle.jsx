@@ -4,6 +4,7 @@ const { ethers } = require('ethers');
 const app = express();
 const port = 3000;
 const path = require('path');
+const publicIP = '18.208.129.38';
 
 const mntABI = require('./ABI.jsx');
 const provider = new ethers.providers.JsonRpcProvider("https://rpc.mantle.xyz");
@@ -84,5 +85,5 @@ app.get('/api/tvl/mantle', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Server is running at http://${publicIP}:${port}`);
 });
