@@ -2,7 +2,7 @@ const express = require('express');
 const { ethers } = require('ethers');
 
 const app = express();
-const port = 3001;
+const port = 80;
 const path = require('path');
 const publicIP = '18.208.129.38';
 
