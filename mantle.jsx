@@ -23,7 +23,7 @@ const addressFunctions = [
     processFunction: (totalAssets) => totalAssets / 1
   },
   {
-    address: " 0xAa81F912D09Fd313Bbc1d5638632aB6bf59aB495",
+    address: "0xAa81F912D09Fd313Bbc1d5638632aB6bf59aB495",
     processFunction: (totalAssets) => totalAssets / 1
   },
   {
@@ -46,20 +46,20 @@ const addressFunctions = [
 ];
 
 const tvlData = {
-  mantle: {
-    USDT: {
+  mantle: [
+    {
       token: "0x201EBa5CC46D216Ce6DC03F6a759e8E766e956aE",
       value: 1061450442
     },
-    WETH: {
+    {
       token: "0xdEAddEaDdeadDEadDEADDEAddEADDEAddead1111",
-      value: 17580003742209089
+      value: 17580003742209088
     },
-    USDC: {
+    {
       token: "0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9",
       value: 159827915
     }
-  }
+  ]
 };
 
 //  function to fetch totalAssets for an address and apply the corresponding function
