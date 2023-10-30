@@ -68,6 +68,6 @@ app.get('/tvl', (req, res) => {
   res.json(tvlData);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(port, '0.0.0.0',() => {
+  console.log(`Server is running at http://18.208.129.38:${port}`);
 });
